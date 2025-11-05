@@ -1,7 +1,5 @@
 /* Import Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Thai:wght@100..900&display=swap');
 
 :root {
 	--color-primary: #0d4663;
@@ -9,13 +7,123 @@
 	--color-accent: #ff9a88;
 
 	--color-black: #111;
-	--color-white: #f5f5f5;
+	--color-white: #f0f0f0;
 
-	--font-sans: "Inter";
+	--font-sans: "Noto Sans Thai";
 
 	--nav-height: 64px;
 }
 
 body {
-	font-family: var(--font-sans), serif;
+	font-family: var(--font-sans), sans-serif;
+	background-color: var(--color-white);
+	font-size: 1.5em;
+	padding-top: 4em;
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
+/* Top Text */
+.compare-products {
+    display: inline-block;
+	margin-top: 1em;
+	text-decoration: none;
+}
+
+.compare-products::after {
+	content: " >";
+}
+
+/* scrolling container */
+.scrolling-container {
+	display: flex;
+	gap: 2em;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	padding-bottom: 15px;
+}
+
+/* card */
+.card{
+	width: 400px;
+    display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+}
+
+/* images */
+.image-stack {
+	position: relative;
+    display: inline-block; /* ทำให้ Parent กินพื้นที่เท่ากับรูปภาพหลัก */
+}
+
+.base-img {
+	display: block;
+	margin-top: 3em;
+	width: 400px;
+	height: 450px;
+	border-radius: 16px;
+}
+
+.overlay-img {
+	position: absolute;
+    width: 120px;
+    height: 120px;
+	border-radius: 16px;
+	bottom: 10px; /* ห่างจากขอบล่าง 10px */
+    right: 10px;  /* ห่างจากขอบขวา 10px */
+}
+
+/* product text */
+.card p {
+	text-align: center;
+}
+
+.product-name {
+	margin-top: 2em;
+	font-weight: bold;
+}
+
+.product-description {
+	margin-top: 1em;
+}
+
+.product-price {
+	margin-top: 2em;
+	font-weight: bold;
+}
+
+
+/* button */
+.button {
+	display: flex;
+	justify-content: center;
+}
+
+.b1 {
+    display: inline-block;
+
+    padding: 15px 20px;
+    border-radius: 36px;
+
+    margin-top: 2em;
+
+
+    text-align: center;
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+
+}
+
+.b2 {
+	display: inline-block;
+	margin-top: 2.5em;
+	margin-left: 0.5em;
+
+	text-decoration: none;
+}
+
+.b2::after{
+	content: " >";
 }
