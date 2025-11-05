@@ -24,17 +24,26 @@ body {
 .container {
 	background-color: var(--color-accent);
 	width: 100%;
+
+	/* 100 Dynamic Viewport Height (100% ของความสูงของวิวพอร์ตแบบไดนามิก) */
 	min-height: 100dvh;
+	/* height: 90vh; */
+	gap: 1rem;
 
 	display: flex;
-	/* gap: 1rem; */
-	/* justify-content: center; */
-	/* align-items: center; */
-	/* align-content: center; */
-	/* flex-wrap: wrap; */
+	flex-direction: row;
 
-	/* flex-direction: column; */
-	/* height: 90vh; */
+	/* main-axis แกนหลัก (Default is Row) */
+	justify-content: center;
+	/* cross-axis แกนรอง */
+	align-items: center;
+
+	/* This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis. */
+	align-content: center;
+
+	/* By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property. */
+	flex-wrap: wrap;
+
 }
 
 .box {
@@ -45,13 +54,23 @@ body {
 	color: var(--color-white);
 	border: solid var(--color-white) 5px;
 
-	/* flex-shrink: 1;
-	flex-grow: 0;
-	flex-basis: 300px; */
 
-	/* flex:1; */
+	flex-shrink: 1;
+	flex-grow: 0;
+	flex-basis: 300px;
+
+	flex: 1;
+
+	/* box is a parent of <span> and we want to change <span> so we can change text*/
+	display: flex;
+	flex-shrink: 0;
+    flex-basis: auto;
 }
 
-/* .box3 {
-	flex:555;
-} */
+.box3, .box6 {
+	flex: 3;
+}
+
+.box1 {
+	flex: 2;
+}
